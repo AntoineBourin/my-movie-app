@@ -1,5 +1,5 @@
 import Header from "@/components/header/Header";
-import "./globals.css";
+import "./globals.scss";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { roboto, montserrat } from "@/fonts";
 
