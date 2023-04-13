@@ -4,6 +4,11 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 .error {
   width: 100%;
   min-height: 90vh;
