@@ -1,0 +1,37 @@
+@import "variables";
+
+.searchResults {
+  position: absolute;
+  z-index: 2;
+  background-color: $whiteColor;
+  top: 45px;
+  padding: 10px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-montserrat);
+
+  > div > a {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      p {
+        color: $secondaryColor;
+      }
+    }
+
+    img {
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+      width: auto;
+      height: auto;
+    }
+
+    p {
+      margin-left: 10px;
+      color: black;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+}
