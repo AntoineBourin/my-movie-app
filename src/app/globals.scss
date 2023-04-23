@@ -9,6 +9,13 @@ a {
   color: unset;
 }
 
+h2 {
+  color: $secondaryColor;
+  font-weight: bold;
+  font-size: 26px;
+  margin-top: 40px;
+}
+
 .error {
   width: 100%;
   min-height: 90vh;
