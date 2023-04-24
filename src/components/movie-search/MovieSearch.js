@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
-import MovieSearchResults from "./MovieSearchResults/MovieSearchResults";
+import MovieSearchResults from "./movie-search-results/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
 
 const MovieSearch = () => {
