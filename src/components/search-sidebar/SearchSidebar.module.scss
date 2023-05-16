@@ -1,0 +1,12 @@
+@import "variables";
+
+.sidebar {
+  margin-top: 20px;
+
+  h1 {
+    font-size: 24px;
+    color: $secondaryColor;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+}
