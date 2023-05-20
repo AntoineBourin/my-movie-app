@@ -1,7 +1,8 @@
 import React from "react";
+import SearchResults from "./SearchResults";
 
-const MoviesPage = () => {
-  return <div></div>;
+const MoviesPage = ({ searchParams }) => {
+  return <SearchResults searchParams={searchParams} />;
 };
 
 export default MoviesPage;
