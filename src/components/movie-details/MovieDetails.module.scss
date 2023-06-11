@@ -57,6 +57,31 @@
           font-size: 20px;
         }
       }
+
+      .production {
+        font-size: 13px;
+      }
+
+      h2 {
+        color: $whiteColor;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 10px 0 0;
+      }
+
+      .overview {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 300;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .credits {
+        margin-top: auto;
+      }
     }
   }
 }
