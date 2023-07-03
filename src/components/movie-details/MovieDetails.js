@@ -5,7 +5,6 @@ import MovieCredits from "../movie-credits/MovieCredits";
 import { Suspense } from "react";
 
 const MovieDetails = ({ movie }) => {
-  console.log(movie);
   return (
     <div className={styles.details}>
       <div className={styles.background}>
