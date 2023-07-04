@@ -2,8 +2,8 @@ import { getMovieByPath } from "@/utils/movieClient";
 import Link from "next/link";
 import styles from "./Genres.module.scss";
 
-const Genres = async () => {
-  const { genres } = await getMovieByPath("/genre/movie/list");
+const Genres = async ({ locale }) => {
+  const { genres } = await getMovieByPath("/genre/movie/list", [], locale);
   return (
     <div>
       <h2>Parcourir par genres</h2>

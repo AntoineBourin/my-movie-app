@@ -7,8 +7,8 @@ import React, { Suspense } from "react";
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-const MovieIdPage = async ({ params }) => {
-  const movie = await getMovieByPath(`/movie/${params.id}`);
+const MovieIdPage = async ({ params: { id, locale } }) => {
+  const movie = await getMovieByPath(`/movie/${id}`, [], locale);
 
   if (!movie.original_title) {
     return notFound();
@@ -18,7 +18,7 @@ const MovieIdPage = async ({ params }) => {
     <div>
       <MovieDetails movie={movie} />
       <Suspense fallback={<p>Chargement ...</p>}>
-        <SimilarMovies movieId={movie.id} />
+        <SimilarMovies movieId={movie.id} locale={locale} />
       </Suspense>
     </div>
   );
