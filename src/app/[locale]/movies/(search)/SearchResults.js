@@ -18,7 +18,7 @@ const SearchResults = async ({ searchParams, genreId, locale }) => {
       {results
         .filter((movie) => movie.poster_path)
         .map((movie) => (
-          <MediaCard key={movie.id} media={movie} />
+          <MediaCard key={movie.id} media={movie} locale={locale} />
         ))}
     </div>
   );

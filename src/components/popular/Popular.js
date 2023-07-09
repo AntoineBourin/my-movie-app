@@ -11,7 +11,7 @@ const Popular = async ({ locale }) => {
       <h2>Les plus populaires</h2>
       <div className={styles.container}>
         {popularMovies.map((movie) => (
-          <MediaCard key={movie.id} media={movie} />
+          <MediaCard key={movie.id} media={movie} locale={locale} />
         ))}
       </div>
     </div>

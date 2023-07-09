@@ -4,10 +4,12 @@ import { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import MovieSearchResults from "./movie-search-results/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
+import { useCurrentLanguage } from "@/hooks/useCurrentLanugage";
 
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
+  const currentLanguage = useCurrentLanguage();
 
   const updateMovieSearch = async (query) => {
     const response = await fetch(`/api/movies/search?query=${query}`);
@@ -26,7 +28,10 @@ const MovieSearch = () => {
         onFocus={() => setHasFocus(true)}
       />
       {movieResults.length > 0 && hasFocus && (
-        <MovieSearchResults movieResults={movieResults} />
+        <MovieSearchResults
+          movieResults={movieResults}
+          locale={currentLanguage}
+        />
       )}
     </div>
   );

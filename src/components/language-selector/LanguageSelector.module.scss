@@ -1,0 +1,39 @@
+@import "variables";
+
+.selector {
+  text-transform: uppercase;
+  position: relative;
+
+  &.enabled {
+    svg {
+      transform: rotate(180deg);
+    }
+    ul {
+      transform: scaleY(1);
+    }
+  }
+
+  ul {
+    background-color: $primaryColor;
+    list-style-type: none;
+    position: absolute;
+    z-index: 20;
+    top: 35px;
+    left: -5px;
+    right: 0;
+    padding: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease-in-out;
+  }
+
+  p {
+    cursor: pointer;
+  }
+  svg {
+    transition: transform 0.3s ease-in-out;
+  }
+}
