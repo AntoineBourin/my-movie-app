@@ -1,0 +1,27 @@
+@import "variables";
+
+.profile {
+  padding: 10px 50px 0 50px;
+
+  .head {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      margin: 0;
+      color: $secondaryColor;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+
+    > div {
+      width: 200px;
+    }
+  }
+}
