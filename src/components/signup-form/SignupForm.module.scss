@@ -1,0 +1,26 @@
+@import "variables";
+
+.signupForm {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    gap: 10px;
+
+    h1 {
+      text-align: center;
+      color: $secondaryColor;
+    }
+
+    input {
+      min-width: 400px;
+      border-radius: 5px;
+      border: 1px solid $greyColor;
+      padding: 10px;
+    }
+  }
+}
