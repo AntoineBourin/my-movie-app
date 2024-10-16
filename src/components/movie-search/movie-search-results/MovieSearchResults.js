@@ -13,6 +13,7 @@ const MovieSearchResults = ({ movieResults, locale }) => {
             onMouseDown={(e) => e.preventDefault()}
           >
             <Image
+              unoptimized
               width={90}
               height={50}
               src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${movie.backdrop_path}`}

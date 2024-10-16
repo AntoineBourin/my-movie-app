@@ -11,6 +11,7 @@ const MediaCard = ({ media, locale }) => {
         <div className={styles.image}>
           <Like mediaId={media.id} />
           <Image
+            unoptimized
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w500${media.poster_path}`}
             alt={media.title}
             fill

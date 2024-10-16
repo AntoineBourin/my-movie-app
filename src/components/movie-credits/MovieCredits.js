@@ -10,6 +10,7 @@ const MovieCredits = async ({ movieId }) => {
       {cast.slice(0, 4).map((person) => (
         <div key={person.id}>
           <Image
+            unoptimized
             src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w185${person.profile_path}`}
             alt={person.name}
             width={90}

@@ -9,6 +9,7 @@ const MovieDetails = ({ movie }) => {
     <div className={styles.details}>
       <div className={styles.background}>
         <Image
+          unoptimized
           src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/original${movie.backdrop_path}`}
           alt={movie.title}
           fill
@@ -16,6 +17,7 @@ const MovieDetails = ({ movie }) => {
       </div>
       <div className={styles.content}>
         <Image
+          unoptimized
           src={`${process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_PATH}/w342${movie.poster_path}`}
           width={250}
           height={400}
