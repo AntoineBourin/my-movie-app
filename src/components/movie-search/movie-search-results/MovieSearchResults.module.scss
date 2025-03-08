@@ -2,7 +2,7 @@
 
 .searchResults {
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   background-color: $whiteColor;
   top: 45px;
   padding: 10px;
@@ -23,8 +23,7 @@
 
     img {
       box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-      width: auto;
-      height: auto;
+      width: 50px;
     }
 
     p {

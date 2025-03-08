@@ -1,14 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { DebounceInput } from "react-debounce-input";
+import { useEffect, useState } from "react";
 import MovieSearchResults from "./movie-search-results/MovieSearchResults";
 import styles from "./MovieSearch.module.scss";
 import { useCurrentLanguage } from "@/hooks/useCurrentLanugage";
+import { useDebounce } from "use-debounce";
 
 const MovieSearch = () => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [searchValue] = useDebounce(inputValue, 500);
   const currentLanguage = useCurrentLanguage();
 
   const updateMovieSearch = async (query) => {
@@ -17,12 +19,15 @@ const MovieSearch = () => {
     setMovieResults(results.filter((movie) => movie.backdrop_path));
   };
 
+  useEffect(() => {
+    updateMovieSearch(searchValue);
+  }, [searchValue]);
+
   return (
     <div className={styles.searchContainer}>
-      <DebounceInput
-        minLength={2}
-        debounceTimeout={500}
-        onChange={(e) => updateMovieSearch(e.target.value)}
+      <input
+        type="text"
+        onChange={(e) => setInputValue(e.target.value)}
         placeholder="Rechercher un titre ..."
         onBlurCapture={() => setHasFocus(false)}
         onFocus={() => setHasFocus(true)}

@@ -3,8 +3,8 @@ import styles from "./Header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import MovieSearch from "../movie-search/MovieSearch";
 import LanguageSelector from "../language-selector/LanguageSelector";
+import MovieSearch from "../movie-search/MovieSearch";
 
 const Header = ({ locale }) => {
   return (
