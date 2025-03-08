@@ -9,7 +9,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function Home({ params: { locale } }) {
+export default async function Home(props) {
+  const { locale } = await props.params;
+
   return (
     <div className={styles.main}>
       <Popular locale={locale} />

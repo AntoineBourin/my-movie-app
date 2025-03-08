@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Ce projet a été créé en support pédagogique pour la découverte et l'utilisation du framework Next.js, version 14 & 15.
 
-## Getting Started
+## Installation
 
-First, run the development server:
+Ce projet est un projet Next.js version 15.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Il inclut notamment : 
+- Next-auth pour permettre l'authentification, l'inscription
+- Prisma pour inscrire des données dans la base de données (lorsqu'un utilisateur connecté ajoute un "J'aime" à un film/série)
+
+### Installation des paquets
+Commencez par installer le projet simplement avec Node version 18.18.0 minimum : 
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Configuration des variables d'environnement
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Créez un compte sur [The Movie DB](https://www.themoviedb.org/) et demandez une clé API.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Une fois la clé API récupérée, vous devriez l'utiliser à la place de celle d'exemple sur votre fichier `.env`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+TMDB_API_KEY="xxxxxxx"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Cette étape est essentielle pour pouvoir récupérer la liste des films/séries à afficher sur l'application.
 
-## Learn More
+Le projet utilise Prisma pour créer, lire et ajouter des données dans une base de donnée. Pour des raisons de praticité, la base de donnée en locale sera un simple fichier `dev.db`. (Vous pouvez modifier avec une base de données Mongo, SQL... Pour cela, rendez-vous sur la [documentation de prisma](https://www.prisma.io/docs/orm/overview/introduction)).
 
-To learn more about Next.js, take a look at the following resources:
+### Configuration de Prisma
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Avant le premier lancement de l'application, vous devrez initialiser Prisma.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npx prisma generate
+```
 
-## Deploy on Vercel
+## Lancer l'application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Développement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm run dev
+```
+
+### Production
+
+```
+npm run build
+```

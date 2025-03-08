@@ -10,7 +10,7 @@ export const getMovieByPath = (path, params = [], language = "fr") => {
       url.searchParams.append(param.key, param.value);
     });
 
-  return fetch(url).then((res) => res.json());
+  return fetch(url, { cache: "force-cache" }).then((res) => res.json());
 };
 
 export const getHydratedMovies = async (movieIds, language = "fr") => {

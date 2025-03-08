@@ -7,7 +7,14 @@ import React, { Suspense } from "react";
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-const MovieIdPage = async ({ params: { id, locale } }) => {
+const MovieIdPage = async props => {
+  const params = await props.params;
+
+  const {
+    id,
+    locale
+  } = params;
+
   const movie = await getMovieByPath(`/movie/${id}`, [], locale);
 
   if (!movie.original_title) {

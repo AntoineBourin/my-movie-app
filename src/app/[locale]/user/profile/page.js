@@ -5,10 +5,12 @@ import prisma from "@/utils/prisma";
 import { getHydratedMovies } from "@/utils/movieClient";
 import MediaCard from "@/components/media-card/MediaCard";
 
-const ProfilePage = async ({ params: { locale } }) => {
+const ProfilePage = async (props) => {
+  const { locale } = await props.params;
+
   const { user: userSession } = await getServerSession();
 
-  const { movieLikes } = await prisma.user.findFirst({
+  const user = await prisma.user.findFirst({
     where: { email: userSession.email },
     include: {
       movieLikes: true,
@@ -16,8 +18,9 @@ const ProfilePage = async ({ params: { locale } }) => {
   });
 
   const movies = await getHydratedMovies(
-    movieLikes.map((movie) => movie.movieId)
+    user?.movieLikes.map((movie) => movie.movieId) ?? []
   );
+
   return (
     <div className={styles.profile}>
       <div className={styles.head}>
@@ -25,7 +28,7 @@ const ProfilePage = async ({ params: { locale } }) => {
         <LogoutButton />
       </div>
       <div className={styles.list}>
-        {movies.map((movie) => (
+        {(movies ?? []).map((movie) => (
           <MediaCard media={movie} locale={locale} key={movie.id} />
         ))}
       </div>
